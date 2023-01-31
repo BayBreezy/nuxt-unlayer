@@ -8,6 +8,10 @@
 
 > Add the [Unlayer Editor](https://docs.unlayer.com/docs) to your [Nuxt](https://nuxt.com) app easily.
 
+## Demo
+
+Here is a link to the demo [Nuxt unlayer demo](https://stackblitz.com/edit/nuxt-starter-tzl335?file=app.vue)
+
 ## Quick Setup
 
 1. Add `nuxt-unlayer` dependency to your project
