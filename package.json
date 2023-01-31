@@ -1,6 +1,6 @@
 {
   "name": "nuxt-unlayer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Module used to add the UNlayer email builder to your app.",
   "license": "MIT",
   "type": "module",
