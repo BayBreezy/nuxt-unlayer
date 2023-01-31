@@ -1,0 +1,487 @@
+{
+  "counters": {
+    "u_column": 13,
+    "u_row": 8,
+    "u_content_text": 4,
+    "u_content_menu": 2,
+    "u_content_button": 1,
+    "u_content_heading": 1
+  },
+  "body": {
+    "id": "dxAStGo0TJ",
+    "rows": [
+      {
+        "id": "IQUXtreaky",
+        "cells": [1],
+        "columns": [
+          {
+            "id": "qCGpAkjVPJ",
+            "contents": [
+              {
+                "id": "dNTcY8LZEM",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "32px 10px 10px 24px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontSize": "24px",
+                  "textAlign": "left",
+                  "lineHeight": "150%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_1",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong>EcoList</strong>"
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "_meta": {
+                "htmlID": "u_column_1",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_1",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "1yR3lv-uSN",
+        "cells": [1],
+        "columns": [
+          {
+            "id": "SiFvADgPmQ",
+            "contents": [
+              {
+                "id": "f1j7pGxbzJ",
+                "type": "menu",
+                "values": {
+                  "containerPadding": "0px",
+                  "anchor": "",
+                  "menu": {
+                    "items": [
+                      {
+                        "key": "1675186666828",
+                        "text": "Home",
+                        "link": {
+                          "name": "web",
+                          "attrs": {
+                            "href": "{{href}}",
+                            "target": "{{target}}"
+                          },
+                          "values": {
+                            "href": "#",
+                            "target": "_blank"
+                          }
+                        }
+                      },
+                      {
+                        "key": "1675186783288",
+                        "text": "Blog",
+                        "link": {
+                          "name": "web",
+                          "values": {
+                            "href": "",
+                            "target": "_self"
+                          }
+                        }
+                      },
+                      {
+                        "key": "1675186792489",
+                        "text": "Tutorials",
+                        "link": {
+                          "name": "web",
+                          "values": {
+                            "href": "",
+                            "target": "_self"
+                          }
+                        }
+                      },
+                      {
+                        "key": "1675186798607",
+                        "text": "Support",
+                        "link": {
+                          "name": "web",
+                          "values": {
+                            "href": "",
+                            "target": "_self"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "fontWeight": 700,
+                  "fontSize": "16px",
+                  "textColor": "#444444",
+                  "linkColor": "#34495e",
+                  "align": "left",
+                  "layout": "horizontal",
+                  "separator": "",
+                  "padding": "0px 16px 0px 0px",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_menu_1",
+                    "htmlClassNames": "u_content_menu"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "14px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px 24px",
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_7",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "24px 0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_5",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "q767N7q_kM",
+        "cells": [1],
+        "columns": [
+          {
+            "id": "R5kHn_qhP7",
+            "contents": [
+              {
+                "id": "bVTJY2hccZ",
+                "type": "text",
+                "values": {
+                  "containerPadding": "0px",
+                  "anchor": "",
+                  "fontSize": "16px",
+                  "textAlign": "left",
+                  "lineHeight": "150%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_3",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"line-height: 150%;\">Hi {{ username }},</p>\n<p style=\"line-height: 150%;\"><br />We’re glad to have you onboard! You’re already on your way to</p>\n<p style=\"line-height: 150%;\">creating beautiful visual products.</p>\n<p style=\"line-height: 150%;\"><br />Whether you’re here for your brand, for a cause, or just for fun —</p>\n<p style=\"line-height: 150%;\">welcome! If there’s anything you need, we’ll be here every step of the way.</p>\n<p style=\"line-height: 150%;\"><br />Thanks,</p>\n<p style=\"line-height: 150%;\">The team</p>",
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "15px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "qjjbvbotTp",
+                "type": "button",
+                "values": {
+                  "containerPadding": "32px 10px 0px 0px",
+                  "anchor": "",
+                  "href": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "buttonColors": {
+                    "color": "#FFFFFF",
+                    "backgroundColor": "#1570ef",
+                    "hoverColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#3AAEE0"
+                  },
+                  "size": {
+                    "autoWidth": true,
+                    "width": "100%"
+                  },
+                  "fontWeight": 700,
+                  "fontSize": "16px",
+                  "textAlign": "left",
+                  "lineHeight": "150%",
+                  "padding": "10px 18px",
+                  "border": {},
+                  "borderRadius": "8px",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_button_1",
+                    "htmlClassNames": "u_content_button"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<span style=\"line-height: 24px;\">Log in</span>",
+                  "calculatedWidth": 84,
+                  "calculatedHeight": 44,
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "14px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px 24px",
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_11",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px 0px 32px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_6",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "3P72NZpLVX",
+        "cells": [1],
+        "columns": [
+          {
+            "id": "qTMukXKn4R",
+            "contents": [
+              {
+                "id": "GCOAls9CvU",
+                "type": "text",
+                "values": {
+                  "containerPadding": "0px",
+                  "anchor": "",
+                  "textAlign": "left",
+                  "lineHeight": "145%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_4",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"line-height: 145%;\">This email was sent to <a rel=\"noopener\" href=\"mailto:olivia@untitledui.com?subject=Test%20email&body=%5BRemove%20This%20for%20your%20content%5D\" target=\"_blank\" data-u-link-value=\"eyJuYW1lIjoiZW1haWwiLCJhdHRycyI6eyJocmVmIjoibWFpbHRvOnt7ZW1haWx9fT9zdWJqZWN0PXt7c3ViamVjdH19JmJvZHk9e3tib2R5fX0ifSwidmFsdWVzIjp7ImVtYWlsIjoib2xpdmlhQHVudGl0bGVkdWkuY29tIiwic3ViamVjdCI6IlRlc3QgZW1haWwiLCJib2R5IjoiW1JlbW92ZSBUaGlzIGZvciB5b3VyIGNvbnRlbnRdIn19\">olivia@untitledui.com</a>. If you'd rather not receive this</p>\n<p style=\"line-height: 145%;\">kind of email, you can <a rel=\"noopener\" href=\"#\" target=\"_blank\" data-u-link-value=\"eyJuYW1lIjoid2ViIiwiYXR0cnMiOnsiaHJlZiI6Int7aHJlZn19IiwidGFyZ2V0Ijoie3t0YXJnZXR9fSJ9LCJ2YWx1ZXMiOnsiaHJlZiI6IiMiLCJ0YXJnZXQiOiJfYmxhbmsifX0=\">unsubscribe </a>or <a rel=\"noopener\" href=\"#\" target=\"_blank\" data-u-link-value=\"eyJuYW1lIjoid2ViIiwiYXR0cnMiOnsiaHJlZiI6Int7aHJlZn19IiwidGFyZ2V0Ijoie3t0YXJnZXR9fSJ9LCJ2YWx1ZXMiOnsiaHJlZiI6IiMiLCJ0YXJnZXQiOiJfYmxhbmsifX0=\">manage your email preferences</a>.</p>\n<p style=\"line-height: 145%;\"><br />© 2077 Untitled UI, 100 Smith Street, Melbourne VIC 3000</p>",
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "13px",
+                      "textAlign": "left"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "32px 24px",
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_12",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_7",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      }
+    ],
+    "values": {
+      "popupPosition": "center",
+      "popupWidth": "600px",
+      "popupHeight": "auto",
+      "borderRadius": "10px",
+      "contentAlign": "center",
+      "contentVerticalAlign": "center",
+      "contentWidth": 640,
+      "fontFamily": {
+        "label": "Open Sans",
+        "value": "'Open Sans',sans-serif",
+        "url": "https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap",
+        "weights": [400, 700]
+      },
+      "textColor": "#2e3846",
+      "popupBackgroundColor": "#FFFFFF",
+      "popupBackgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "cover",
+        "position": "center"
+      },
+      "popupOverlay_backgroundColor": "rgba(0, 0, 0, 0.1)",
+      "popupCloseButton_position": "top-right",
+      "popupCloseButton_backgroundColor": "#DDDDDD",
+      "popupCloseButton_iconColor": "#000000",
+      "popupCloseButton_borderRadius": "0px",
+      "popupCloseButton_margin": "0px",
+      "popupCloseButton_action": {
+        "name": "close_popup",
+        "attrs": {
+          "onClick": "document.querySelector('.u-popup-container').style.display = 'none';"
+        }
+      },
+      "backgroundColor": "#ffffff",
+      "backgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "custom",
+        "position": "center"
+      },
+      "preheaderText": "Welcome to EcoList",
+      "linkStyle": {
+        "body": true,
+        "linkColor": "#175cd3",
+        "linkHoverColor": "#0000ee",
+        "linkUnderline": false,
+        "linkHoverUnderline": true,
+        "inherit": false
+      },
+      "_meta": {
+        "htmlID": "u_body",
+        "htmlClassNames": "u_body"
+      }
+    }
+  },
+  "schemaVersion": 12
+}
