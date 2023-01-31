@@ -10,6 +10,7 @@
 
 ## Demo
 
+** Click `Open in New Tab` when you visit this link **
 Here is a link to the demo [Nuxt unlayer demo](https://stackblitz.com/edit/nuxt-starter-tzl335?file=app.vue)
 
 ## Quick Setup
