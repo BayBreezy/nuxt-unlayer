@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 
 That's it! You can now use Nuxt Unlayer in your Nuxt app ✨
 
-### Full Example
+## Full Example
 
 <details>
 <summary>Full Example</summary>

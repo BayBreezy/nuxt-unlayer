@@ -42,7 +42,7 @@
     "vitest": "^0.28.2"
   },
   "repository": {
-    "url": ""
+    "url": "https://github.com/BayBreezy/nuxt-unlayer"
   },
   "author": {
     "name": "Behon Baker",
