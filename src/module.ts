@@ -1,9 +1,5 @@
 import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
 import { name, version } from "../package.json";
-import chalk from "chalk";
-import consola from "consola";
-
-const logger = consola.withScope("nuxt:unlayer");
 
 // Module options TypeScript inteface definition
 export interface ModuleOptions {}
@@ -29,6 +25,5 @@ export default defineNuxtModule<ModuleOptions>({
       name: "EmailEditor",
       filePath: resolver.resolve("./runtime/components/EmailEditor.vue"),
     });
-    logger.success(chalk.greenBright("Unlayer component added to your app"));
   },
 });
