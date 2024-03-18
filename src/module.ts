@@ -24,6 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
     addComponent({
       name: "EmailEditor",
       filePath: resolver.resolve("./runtime/components/EmailEditor.vue"),
+      mode: "client",
     });
   },
 });
