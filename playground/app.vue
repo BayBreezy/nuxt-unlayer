@@ -29,8 +29,8 @@ import sample from "@/sample.json";
 
 useHead({ title: "Nuxt - Unlayer" });
 
-let editor = shallowRef();
-let hiddenFile = ref();
+const editor = shallowRef();
+const hiddenFile = ref();
 
 const editorLoaded = () => {
   // load up design after the editor gets loaded
@@ -48,7 +48,7 @@ const saveDesign = () => {
 
 const importDesign = (e: any) => {
   if (!e) return;
-  let file = e.target.files[0];
+  const file = e.target.files[0];
   if (!file.type.includes("json")) return;
   const reader = new FileReader();
 
@@ -59,9 +59,9 @@ const importDesign = (e: any) => {
 };
 const exportHTML = () => {
   editor.value.exportHtml((data: any) => {
-    var json = data.design; // design json
+    const json = data.design; // design json
     console.log("🚀 ~ file: app.vue:40 ~ editor.value.exportHtml ~ json", json);
-    var html = data.html; // final html
+    const html = data.html; // final html
     console.log("🚀 ~ file: app.vue:42 ~ editor.value.exportHtml ~ html", html);
   });
 };

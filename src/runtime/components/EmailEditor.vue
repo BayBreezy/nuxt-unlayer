@@ -7,7 +7,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { computed, onMounted, nextTick } from "vue";
 const emits = defineEmits(["load", "ready", "update:editor"]);
-let theId = computed(() => uuidv4());
+const theId = computed(() => uuidv4());
 
 // Editor props with some defaults
 const props = defineProps({
@@ -36,21 +36,21 @@ const props = defineProps({
   templateId: Number,
 });
 
-let editor: any = null;
+let editorInstance: any = null;
 
 onMounted(async () => {
   await nextTick();
   // Create instance
   // @ts-ignore
-  editor = window.unlayer.createEditor({
+  editorInstance = window.unlayer.createEditor({
     ...props,
     id: theId.value, //theId.value,
   });
   // Add listener to send back the instance once teh editor is ready
-  editor.addEventListener("editor:ready", () => {
-    emits("update:editor", editor);
-    emits("load", editor);
-    emits("ready", editor);
+  editorInstance.addEventListener("editor:ready", () => {
+    emits("update:editor", editorInstance);
+    emits("load", editorInstance);
+    emits("ready", editorInstance);
   });
 });
 </script>
