@@ -5,7 +5,7 @@
 <script setup lang="ts">
 // UUID to create random ID for the editor
 import { v4 as uuidv4 } from "uuid";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, nextTick } from "vue";
 const emits = defineEmits(["load", "ready", "update:editor"]);
 let theId = computed(() => uuidv4());
 
@@ -38,7 +38,8 @@ const props = defineProps({
 
 let editor: any = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   // Create instance
   // @ts-ignore
   editor = window.unlayer.createEditor({
