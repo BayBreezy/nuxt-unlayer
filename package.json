@@ -1,6 +1,6 @@
 {
   "name": "nuxt-unlayer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Module used to add the UNlayer email builder to your app.",
   "license": "MIT",
   "type": "module",
@@ -21,7 +21,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run unit && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
