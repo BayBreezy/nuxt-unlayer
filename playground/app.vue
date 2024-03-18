@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { useHead, shallowRef, ref } from "#imports";
 import sample from "@/sample.json";
 
 useHead({ title: "Nuxt - Unlayer" });
