@@ -10,7 +10,7 @@
     </header>
     <section class="editor">
       <ClientOnly>
-        <EmailEditor v-model:editor="editor" @load="editorLoaded" />
+        <EmailEditor @load="editorLoaded" />
       </ClientOnly>
     </section>
   </main>
@@ -32,7 +32,10 @@ useHead({ title: "Nuxt - Unlayer" });
 const editor = shallowRef();
 const hiddenFile = ref();
 
-const editorLoaded = () => {
+const editorLoaded = (value: any) => {
+  console.log("🚀 ~ file: app.vue:23 ~ editorLoaded ~ value", value);
+  editor.value = value;
+
   // load up design after the editor gets loaded
   editor.value.loadDesign(JSON.parse(JSON.stringify(sample)));
 };
