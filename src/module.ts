@@ -15,10 +15,13 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     // add unlayer to script tags
     nuxt.options.app.head.script?.push({
-      src: "https://editor.unlayer.com/embed.js",
+      src: "//editor.unlayer.com/embed.js",
     });
     // create resolver
     const resolver = createResolver(import.meta.url);
+    const runtimeDir = resolver.resolve("./runtime");
+    nuxt.options.build.transpile.push(runtimeDir);
+    nuxt.options.alias["#unlayer"] = runtimeDir;
 
     // Add editor component
     addComponent({
