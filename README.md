@@ -53,7 +53,7 @@ That's it! You can now use Nuxt Unlayer in your Nuxt app ✨
     </header>
     <section class="editor">
       <ClientOnly>
-        <EmailEditor v-model:editor="editor" @load="editorLoaded" />
+        <EmailEditor @ready="editorLoaded" />
       </ClientOnly>
     </section>
   </main>
@@ -67,20 +67,25 @@ That's it! You can now use Nuxt Unlayer in your Nuxt app ✨
 </template>
 
 <script setup lang="ts">
+import { useHead, shallowRef, ref } from "#imports";
 import sample from "@/sample.json";
+import { type EditorInstance } from "#unlayer/props";
 
 useHead({ title: "Nuxt - Unlayer" });
 
-let editor = shallowRef();
-let hiddenFile = ref();
+const editor = shallowRef<EditorInstance | null | undefined>();
+const hiddenFile = ref();
 
-const editorLoaded = () => {
+const editorLoaded = (value: any) => {
+  console.log("🚀 ~ file: app.vue:23 ~ editorLoaded ~ value", value);
+  editor.value = value;
+
   // load up design after the editor gets loaded
-  editor.value.loadDesign(JSON.parse(JSON.stringify(sample)));
+  editor.value?.loadDesign(JSON.parse(JSON.stringify(sample)));
 };
 
 const saveDesign = () => {
-  editor.value.saveDesign((design: any) => {
+  editor.value?.saveDesign((design: any) => {
     console.log(
       "🚀 ~ file: app.vue:31 ~ editor.value.saveDesign ~ design",
       design
@@ -90,20 +95,21 @@ const saveDesign = () => {
 
 const importDesign = (e: any) => {
   if (!e) return;
-  let file = e.target.files[0];
+  const file = e.target.files[0];
   if (!file.type.includes("json")) return;
   const reader = new FileReader();
 
   reader.onload = function (readVal) {
-    editor.value.loadDesign(JSON.parse(readVal.target?.result));
+    //@ts-ignore
+    editor.value?.loadDesign(JSON.parse(readVal.target?.result));
   };
   reader.readAsText(file);
 };
 const exportHTML = () => {
-  editor.value.exportHtml((data: any) => {
-    var json = data.design; // design json
+  editor.value?.exportHtml((data: any) => {
+    const json = data.design; // design json
     console.log("🚀 ~ file: app.vue:40 ~ editor.value.exportHtml ~ json", json);
-    var html = data.html; // final html
+    const html = data.html; // final html
     console.log("🚀 ~ file: app.vue:42 ~ editor.value.exportHtml ~ html", html);
   });
 };
