@@ -2,10 +2,22 @@
   <main class="main">
     <header class="header">
       <h1>Nuxt Unlayer</h1>
-      <div v-if="editor" class="nav">
-        <button @click="exportHTML">Export HTML</button>
-        <button @click="hiddenFile.click()">Import Design</button>
-        <button @click="saveDesign" class="btn">Save Design</button>
+      <div
+        v-if="editor"
+        class="nav"
+      >
+        <button @click="exportHTML">
+          Export HTML
+        </button>
+        <button @click="hiddenFile.click()">
+          Import Design
+        </button>
+        <button
+          class="btn"
+          @click="saveDesign"
+        >
+          Save Design
+        </button>
       </div>
     </header>
     <section class="editor">
@@ -15,12 +27,12 @@
     </section>
   </main>
   <input
-    @change="importDesign"
+    ref="hiddenFile"
     type="file"
     hidden
-    ref="hiddenFile"
     accept=".json"
-  />
+    @change="importDesign"
+  >
 </template>
 
 <script setup lang="ts">

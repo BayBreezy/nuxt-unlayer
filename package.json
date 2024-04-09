@@ -23,6 +23,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
@@ -38,8 +39,9 @@
     "@nuxt/schema": "^3.11.2",
     "@nuxt/test-utils": "^3.12.0",
     "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
     "changelogen": "^0.5.5",
-    "eslint": "^9.0.0",
+    "eslint": "^8.57.0",
     "nuxt": "^3.11.2",
     "vitest": "^1.4.0"
   },

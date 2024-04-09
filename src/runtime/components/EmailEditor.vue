@@ -1,5 +1,8 @@
 <template>
-  <div :id="theId" style="height: 100%" />
+  <div
+    :id="theId"
+    style="height: 100%"
+  />
 </template>
 
 <script setup lang="ts">
@@ -25,7 +28,7 @@ const props = withDefaults(defineProps<EditorProps>(), {
   locale: "en-US",
 });
 
-let editorInstance = shallowRef<EditorInstance | null | undefined>();
+const editorInstance = shallowRef<EditorInstance | null | undefined>();
 
 const loadEditor = async () => {
   const data = toRef(() => props);
