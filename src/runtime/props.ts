@@ -1,5 +1,4 @@
-import { CSSProperties } from "vue";
-
+export type DisplayMode = "email" | "web";
 export type ThemeColor = "light" | "dark";
 export type DockPosition = "right" | "left";
 export interface AppearanceConfig {
@@ -15,24 +14,16 @@ export interface AppearanceConfig {
     | undefined;
 }
 
+interface StringList {
+  [key: string]: string;
+}
+
 export interface User {
   readonly id?: number | undefined;
   readonly name?: string | undefined;
   readonly email?: string | undefined;
+  [key: string]: any;
 }
-
-export interface GroupedSpecialLink {
-  readonly name: string;
-  readonly specialLinks: Array<SimpleSpecialLink | GroupedSpecialLink>;
-}
-
-export interface SimpleSpecialLink {
-  readonly name: string;
-  readonly href: string;
-  readonly target: string;
-}
-
-export type SpecialLink = SimpleSpecialLink | GroupedSpecialLink;
 
 export interface GroupedMergeTag {
   readonly name: string;
@@ -59,20 +50,18 @@ export interface ConditionalMergeTag {
 
 export type MergeTag = SimpleMergeTag | ConditionalMergeTag | GroupedMergeTag;
 
-export interface DesignTagConfig {
-  readonly delimiter: [string, string];
+export interface GroupedSpecialLink {
+  readonly name: string;
+  readonly specialLinks: Array<SimpleSpecialLink | GroupedSpecialLink>;
 }
 
-export interface DisplayCondition {
-  readonly type: string;
-  readonly label: string;
-  readonly description: string;
-  readonly before: string;
-  readonly after: string;
+export interface SimpleSpecialLink {
+  readonly name: string;
+  readonly href: string;
+  readonly target: string;
 }
 
-export type EmptyDisplayCondition = object;
-
+export type SpecialLink = SimpleSpecialLink | GroupedSpecialLink;
 export interface ToolPropertiesConfig {
   readonly [key: string]: { value: string };
 }
@@ -92,116 +81,145 @@ export interface EditorConfig {
   readonly maxRows?: number | undefined;
 }
 
-export interface Features {
-  readonly audit?: boolean | undefined;
-  readonly preview?: boolean | undefined;
-  readonly imageEditor?: boolean | undefined;
-  readonly undoRedo?: boolean | undefined;
-  readonly stockImages?: boolean | undefined;
-  readonly textEditor?: TextEditor | undefined;
+export interface Font {
+  defaultFont?: boolean;
+  type?: "google" | string;
+  label: string;
+  value: string;
+  url?: string;
+  weights?: number[];
+}
+export type FontList = Font[];
+export interface FontConfig {
+  showDefaultFonts?: boolean;
+  customFonts?: FontList;
 }
 
-export interface TextEditor {
-  readonly spellChecker?: boolean | undefined;
-  readonly tables?: boolean | undefined;
-  readonly cleanPaste?: boolean | undefined;
-  readonly emojis?: boolean | undefined;
+export type EditorProps = {
+  displayMode?: DisplayMode;
+  projectId?: number | null;
+  locale?: string;
+  appearance?: AppearanceConfig;
+  user?: User;
+  mergeTags?: MergeTag[];
+  designTags?: Record<string, any>;
+  specialLinks?: SpecialLink[];
+  tools?: ToolsConfig;
+  blocks?: Array<Record<string, any>>;
+  editor?: EditorConfig;
+  fonts?: FontConfig;
+  safeHtml?: boolean;
+  customJS?: string[];
+  customCSS?: string[];
+  textDirection?: "ltr" | "rtl";
+};
+
+export type LinkTypeFieldOption = {
+  value: string;
+  label: string;
+  enabled?: boolean;
+};
+export interface LinkTypeField {
+  name: string;
+  label: string;
+  defaultValue?: string | LinkTypeFieldOption[] | undefined;
+  enabled?: boolean;
+  placeholderText?: string;
+  inputType?: any;
+  isClearable?: boolean;
+  isCreatable?: boolean;
+  isMulti?: boolean;
+  limit?: number;
+  limitMessage?: string;
+  validationRegex?: string;
+  options?: LinkTypeFieldOption[];
+  onCreateOption?: (
+    inputValue: string,
+    meta: object,
+    done: (newOption: LinkTypeFieldOption) => void
+  ) => void;
 }
-
-export type Translations = Record<string, Record<string, string>>;
-
-export type DisplayMode = "email" | "web";
-export interface UnlayerOptions {
-  readonly displayMode?: DisplayMode | undefined;
-  readonly projectId?: number | undefined;
-  readonly locale?: string | undefined;
-  readonly appearance?: AppearanceConfig | undefined;
-  readonly user?: User | undefined;
-  readonly mergeTags?: MergeTag[] | undefined;
-  readonly specialLinks?: SpecialLink[] | undefined;
-  readonly designTags?: StringList | undefined;
-  readonly designTagsConfig?: DesignTagConfig | undefined;
-  readonly tools?: ToolsConfig | undefined;
-  readonly blocks?: object[] | undefined;
-  readonly editor?: EditorConfig | undefined;
-  readonly safeHtml?: boolean | undefined;
-  readonly customJS?: string[] | undefined;
-  readonly customCSS?: string[] | undefined;
-  readonly features?: Features | undefined;
-  readonly translations?: Translations | undefined;
-  readonly displayConditions?: DisplayCondition[] | undefined;
-  readonly tabs?: {
-    [tabName: string]: {
-      enabled?: boolean;
-      type?: string;
-      position?: number;
-      icon?: string;
-      active?: boolean;
-    };
+export interface LinkType {
+  name: string;
+  label: string;
+  enabled?: boolean;
+  attrs?: {
+    href?: string;
+    target?: string;
+    onClick?: string | Function;
+    class?: string;
+    [key: string]: any;
   };
+  fields?: LinkTypeField[];
 }
+export type LinkTypes = LinkType[];
+export type LinkTypesSharedConfig = Pick<LinkType, "attrs" | "fields">;
 
-export interface EmailEditorProps {
-  readonly editorId?: string | undefined;
-  readonly style?: CSSProperties | undefined;
-  readonly minHeight?: number | string | undefined;
-  readonly options?: UnlayerOptions | undefined;
-  readonly tools?: ToolsConfig | undefined;
-  readonly appearance?: AppearanceConfig | undefined;
-  readonly projectId?: number | undefined;
-  readonly scriptUrl?: string | undefined;
-  /** @deprecated Use **onReady** instead */
-  onLoad?(): void;
-  onReady?(): void;
-}
-
-export interface HtmlExport {
-  readonly design: Design;
-  readonly html: string;
-}
-
-export interface HtmlOptions {
-  readonly cleanup: boolean;
-  readonly minify: boolean;
-}
-
-export interface FileInfo {
-  readonly accepted: File[];
-  readonly attachments: File[];
-}
-
-export interface FileUploadDoneData {
-  readonly progress: number;
-  readonly url?: string | undefined;
-}
-
-export interface Design {
-  readonly counters?: object | undefined;
-  readonly body: {
-    readonly rows: object[];
-    readonly values?: object | undefined;
-  };
-}
-
-export type SaveDesignCallback = (data: Design) => void;
-export type ExportHtmlCallback = (data: HtmlExport) => void;
-export type EventCallback = (data: object) => void;
-export type FileUploadCallback = (
-  file: FileInfo,
-  done: FileUploadDoneCallback
-) => void;
-export type FileUploadDoneCallback = (data: FileUploadDoneData) => void;
-
-export type DisplayConditionDoneCallback = (
-  data: DisplayCondition | null
-) => void;
-export type DisplayConditionCallback = (
-  data: DisplayCondition | EmptyDisplayCondition,
-  done: DisplayConditionDoneCallback
-) => void;
-
-export {};
-
-interface StringList {
-  [key: string]: string;
-}
+export type EditorInstance = {
+  frame?: Record<string, any> | null;
+  init(config?: Record<string, any>): void;
+  destroy(): void;
+  version: string | undefined;
+  loadEditor(config: Record<string, any>): void;
+  renderEditor(config: Record<string, any>): void;
+  initEditor(config: Record<string, any>): void;
+  registerColumns(cells: number[]): void;
+  registerCallback(type: string, callback: Function): void;
+  unregisterCallback(type: string): void;
+  registerProvider(type: string, callback: Function): void;
+  unregisterProvider(type: string): void;
+  reloadProvider(type: string): void;
+  addEventListener(type: string, callback: Function): void;
+  removeEventListener(type: string): void;
+  setDesignId(id: string | null): void;
+  setDesignMode(designMode: string): void;
+  setDisplayMode(displayMode: DisplayMode): void;
+  loadProject(projectId: number): void;
+  loadUser(user: User): void;
+  loadTemplate(templateId: number): void;
+  loadStockTemplate(stockTemplateId: string): void;
+  setLinkTypes(linkTypes: LinkTypes): void;
+  setLinkTypesSharedConfig(
+    linkTypesSharedConfig: LinkTypesSharedConfig | null
+  ): void;
+  setMergeTags(mergeTags: MergeTag): void;
+  setSpecialLinks(specialLinks: SpecialLink[]): void;
+  setDisplayConditions(displayConditions: any): void;
+  setLocale(locale: string | null): void;
+  setTextDirection(textDirection: "rtl" | "ltr" | null): void;
+  setTranslations(translations: any): void;
+  loadBlank(bodyValues?: object): void;
+  loadDesign(design: any): void;
+  saveDesign(callback: Function, options?: any): void;
+  exportHtml(callback: (data: any) => void, options?: any): void;
+  exportLiveHtml(callback: (data: any) => void, options?: any): void;
+  exportPlainText(callback: (data: any) => void, options?: any): void;
+  exportImage(callback: (data: any) => void, options?: any): void;
+  exportPdf(callback: (data: any) => void, options?: any): void;
+  exportZip(callback: (data: any) => void, options?: any): void;
+  setAppearance(appearance: Partial<AppearanceConfig>): void;
+  setBodyValues(bodyValues: any, bodyId?: number): void;
+  setDesignTagsConfig(designTagsConfig: any): void;
+  setMergeTagsConfig(mergeTagsConfig: any): void;
+  showPreview(payload: { device?: any; resolution?: number }): void;
+  hidePreview(): void;
+  canUndo(callback: (result: boolean) => void): void;
+  canRedo(callback: (result: boolean) => void): void;
+  undo(): void;
+  redo(): void;
+  audit(
+    callback: (data: { status: "FAIL" | "PASS"; errors: any[] }) => void
+  ): void;
+  setValidator(validator: any | null): void;
+  setToolValidator(tool: string, validator: any | null): void;
+  updateTabs(tabs: any): void;
+  clearValidators(): void;
+  registerContainerExporter(): void;
+  registerItemExporter(): void;
+  registerTool(): void;
+  registerPropertyEditor(): void;
+  registerTab(): void;
+  createPanel(): void;
+  createViewer(): void;
+  createWidget(): void;
+};
