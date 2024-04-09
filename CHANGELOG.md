@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.0.4
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.3...v0.0.4)
+
+### 📖 Documentation
+
+- Update playground ([4cbf1fe](https://github.com/BayBreezy/nuxt-unlayer/commit/4cbf1fe))
+
+### 🏡 Chore
+
+- Update docs ([df0b5e1](https://github.com/BayBreezy/nuxt-unlayer/commit/df0b5e1))
+- Export some types ([ac5c117](https://github.com/BayBreezy/nuxt-unlayer/commit/ac5c117))
+- Bump deps ([4e0cf1e](https://github.com/BayBreezy/nuxt-unlayer/commit/4e0cf1e))
+
+### 🎨 Styles
+
+- **lint:** Run lint fix ([9a35d6d](https://github.com/BayBreezy/nuxt-unlayer/commit/9a35d6d))
+
+### ❤️ Contributors
+
+- BayBreezy <behon.baker@yahoo.com>
+
 ## v0.0.3
 
 
