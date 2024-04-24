@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.0.5
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.4...v0.0.5)
+
+### 🏡 Chore
+
+- Update dependencies ([c5bdebd](https://github.com/BayBreezy/nuxt-unlayer/commit/c5bdebd))
+- Add design type ([1f6e580](https://github.com/BayBreezy/nuxt-unlayer/commit/1f6e580))
+- Update exportHtml types ([6f09bdd](https://github.com/BayBreezy/nuxt-unlayer/commit/6f09bdd))
+- Update plaintext export types ([ad6e206](https://github.com/BayBreezy/nuxt-unlayer/commit/ad6e206))
+- Update image export types ([ef9e7da](https://github.com/BayBreezy/nuxt-unlayer/commit/ef9e7da))
+- Update type for pdf export ([c7e93de](https://github.com/BayBreezy/nuxt-unlayer/commit/c7e93de))
+- Update types for export zip ([e594769](https://github.com/BayBreezy/nuxt-unlayer/commit/e594769))
+- Update registerCallback types ([b242d40](https://github.com/BayBreezy/nuxt-unlayer/commit/b242d40))
+- Add features prop ([19c9333](https://github.com/BayBreezy/nuxt-unlayer/commit/19c9333))
+- Update event listeners on editor instance ([5b46f93](https://github.com/BayBreezy/nuxt-unlayer/commit/5b46f93))
+- Update deps ([79cb3ca](https://github.com/BayBreezy/nuxt-unlayer/commit/79cb3ca))
+
+### ❤️ Contributors
+
+- BayBreezy <behon.baker@yahoo.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.3...v0.0.4)
