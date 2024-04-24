@@ -17,6 +17,11 @@ export interface AppearanceConfig {
 interface StringList {
   [key: string]: string;
 }
+export interface Design {
+  readonly body: Record<string, any>;
+  readonly counters: Record<string, any>;
+  readonly schemaVersion?: number;
+}
 
 export interface User {
   readonly id?: number | undefined;
@@ -190,7 +195,7 @@ export type EditorInstance = {
   setTranslations(translations: any): void;
   loadBlank(bodyValues?: object): void;
   loadDesign(design: any): void;
-  saveDesign(callback: Function, options?: any): void;
+  saveDesign(callback: (data: Design) => void, options?: any): void;
   exportHtml(callback: (data: any) => void, options?: any): void;
   exportLiveHtml(callback: (data: any) => void, options?: any): void;
   exportPlainText(callback: (data: any) => void, options?: any): void;
