@@ -1,6 +1,5 @@
 import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
 import { name, version } from "../package.json";
-import { addCustomTab } from "@nuxt/devtools-kit";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
@@ -31,8 +30,8 @@ export default defineNuxtModule<ModuleOptions>({
       mode: "client",
     });
 
-    if (nuxt.options.dev) {
-      addCustomTab({
+    nuxt.hook("devtools:customTabs", (tabs) => {
+      tabs.push({
         name: "unlayer",
         title: "Unlayer",
         icon: "https://files.readme.io/5f5ad38-small-favicon.png",
@@ -41,6 +40,6 @@ export default defineNuxtModule<ModuleOptions>({
           src: "https://docs.unlayer.com/docs/getting-started",
         },
       });
-    }
+    });
   },
 });
