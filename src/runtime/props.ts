@@ -23,6 +23,16 @@ export interface Design {
   readonly schemaVersion?: number;
 }
 
+export interface ImageExport {
+  readonly url: string;
+  readonly design: Design;
+}
+
+export interface ImageExportOptions {
+  readonly fullPage?: boolean;
+  readonly mergeTags?: MergeTag;
+}
+
 export interface HTMLExport {
   readonly html: string;
   readonly design: Design;
@@ -235,7 +245,10 @@ export type EditorInstance = {
     callback: (data: PlainTextExport) => void,
     options?: PLainTextExportOptions
   ): void;
-  exportImage(callback: (data: any) => void, options?: any): void;
+  exportImage(
+    callback: (data: ImageExport) => void,
+    options?: ImageExportOptions
+  ): void;
   exportPdf(callback: (data: any) => void, options?: any): void;
   exportZip(callback: (data: any) => void, options?: any): void;
   setAppearance(appearance: Partial<AppearanceConfig>): void;
