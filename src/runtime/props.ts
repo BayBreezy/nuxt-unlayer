@@ -154,6 +154,8 @@ export interface ToolsConfig {
 export interface EditorConfig {
   readonly minRows?: number | undefined;
   readonly maxRows?: number | undefined;
+  readonly autoSelectOnDrop?: boolean | undefined;
+  readonly confirmOnDelete?: boolean | undefined;
 }
 
 export interface Font {
@@ -168,6 +170,76 @@ export type FontList = Font[];
 export interface FontConfig {
   showDefaultFonts?: boolean;
   customFonts?: FontList;
+}
+
+export interface ColorPicker {
+  readonly presets?: string[];
+}
+
+export interface CustomButton {
+  name: string;
+  text: string;
+  icon: string;
+  onSetup: () => {};
+  onAction: (data: any, callback: Function) => void;
+}
+
+export interface TextEditor {
+  readonly fontSizes?: string[];
+  readonly spellChecker?: boolean;
+  readonly tables?: boolean;
+  readonly cleanPaste?: boolean | "confirm" | "basic" | string;
+  readonly emojis?: boolean;
+  readonly inlineFontControls?: boolean;
+  /**
+   * @example
+   * 
+   * features: {
+      textEditor: {
+        customButtons: [
+          {
+            name: 'my_button',
+            text: 'My Button',
+            icon: 'bookmark',
+            onSetup: () => {},
+            onAction: (data, callback) => {
+              console.log(data.text);
+              callback(data.text + ' Updated');
+            },
+          },
+        ],
+      },
+    },
+   */
+  readonly customButtons?: CustomButton[];
+}
+
+export interface ImageEditor {
+  enabled?: boolean;
+  tools?: {
+    resize?: boolean;
+  };
+}
+
+export interface StockImage {
+  enabled?: boolean;
+  safeSearch?: boolean;
+  defaultSearchTerm?: string;
+}
+
+export interface Feature {
+  preview?: boolean;
+  userUploads?: boolean;
+  audit?: boolean;
+  pageAnchors?: boolean;
+  undoRedo?: boolean;
+  stockImages?: StockImage;
+  textEditor?: TextEditor;
+  preheaderText?: boolean;
+  smartMergeTags?: boolean;
+  svgImageUpload?: boolean;
+  sendTestEmail?: boolean;
+  colorPicker?: ColorPicker;
 }
 
 export type EditorProps = {
@@ -187,6 +259,7 @@ export type EditorProps = {
   customJS?: string[];
   customCSS?: string[];
   textDirection?: "ltr" | "rtl";
+  features?: Feature;
 };
 
 export type LinkTypeFieldOption = {
@@ -238,6 +311,11 @@ export type EditorInstance = {
   loadEditor(config: Record<string, any>): void;
   renderEditor(config: Record<string, any>): void;
   initEditor(config: Record<string, any>): void;
+  /**
+   * We have a few pre-built blocks available with different column sizes. You can add your own blocks with custom column sizes. Each block can have up to 12 columns.
+   *
+   * @param cells An array of column numbers that you want to register as cells.
+   */
   registerColumns(cells: number[]): void;
   registerCallback(type: string, callback: Function): void;
   registerCallback(
@@ -267,6 +345,13 @@ export type EditorInstance = {
   setLocale(locale: string | null): void;
   setTextDirection(textDirection: "rtl" | "ltr" | null): void;
   setTranslations(translations: any): void;
+  /**
+   * The editor loads with a blank design by default. You can use this function to reset the design to blank state and let the user can start from scratch.
+   *
+   * You can also specify a background color for the body here.
+   *
+   * @param bodyValues default values that should be set after loading the blank design
+   */
   loadBlank(bodyValues?: object): void;
   loadDesign(design: Design): void;
   saveDesign(callback: (data: Design) => void, options?: any): void;
@@ -289,6 +374,11 @@ export type EditorInstance = {
     options?: ZipExportOptions
   ): void;
   setAppearance(appearance: Partial<AppearanceConfig>): void;
+  /**
+   * You can programmatically set values for the Body panel options.
+   *
+   * @param bodyValues default values that should be set after loading the blank design
+   */
   setBodyValues(bodyValues: any, bodyId?: number): void;
   setDesignTagsConfig(designTagsConfig: any): void;
   setMergeTagsConfig(mergeTagsConfig: any): void;
