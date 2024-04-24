@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.6
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.5...v0.0.6)
+
+### 🏡 Chore
+
+- Add unlayer docs to devtools in dev ([ec1f080](https://github.com/BayBreezy/nuxt-unlayer/commit/ec1f080))
+- Update type defs ([8b42bd9](https://github.com/BayBreezy/nuxt-unlayer/commit/8b42bd9))
+- Update deps ([cc3a4bb](https://github.com/BayBreezy/nuxt-unlayer/commit/cc3a4bb))
+- Add nuxt devtoolskit as dev dep ([1b1793e](https://github.com/BayBreezy/nuxt-unlayer/commit/1b1793e))
+- Add custom tab to devtool via hook ([43378ef](https://github.com/BayBreezy/nuxt-unlayer/commit/43378ef))
+
+### ❤️ Contributors
+
+- Behon Baker <behon.baker@yahoo.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.4...v0.0.5)
