@@ -23,6 +23,16 @@ export interface Design {
   readonly schemaVersion?: number;
 }
 
+export interface FileInfo {
+  readonly accepted: File[];
+  readonly attachments: File[];
+}
+
+export interface FileUploadDoneData {
+  readonly progress: number;
+  readonly url?: string | undefined;
+}
+
 export interface ImageExport {
   readonly url: string;
   readonly design: Design;
@@ -230,6 +240,10 @@ export type EditorInstance = {
   initEditor(config: Record<string, any>): void;
   registerColumns(cells: number[]): void;
   registerCallback(type: string, callback: Function): void;
+  registerCallback(
+    type: "image",
+    callback: (file: FileInfo, done: (data: FileUploadDoneData) => void) => void
+  ): void;
   unregisterCallback(type: string): void;
   registerProvider(type: string, callback: Function): void;
   unregisterProvider(type: string): void;
@@ -254,7 +268,7 @@ export type EditorInstance = {
   setTextDirection(textDirection: "rtl" | "ltr" | null): void;
   setTranslations(translations: any): void;
   loadBlank(bodyValues?: object): void;
-  loadDesign(design: any): void;
+  loadDesign(design: Design): void;
   saveDesign(callback: (data: Design) => void, options?: any): void;
   exportHtml(callback: (data: HTMLExport) => void, options?: HtmlOptions): void;
   exportLiveHtml(callback: (data: any) => void, options?: any): void;
