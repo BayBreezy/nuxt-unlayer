@@ -1,7 +1,8 @@
 import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
 import { name, version } from "../package.json";
+import { addCustomTab } from "@nuxt/devtools-kit";
 
-// Module options TypeScript inteface definition
+// Module options TypeScript interface definition
 export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
@@ -29,5 +30,17 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: resolver.resolve("./runtime/components/EmailEditor.vue"),
       mode: "client",
     });
+
+    if (nuxt.options.dev) {
+      addCustomTab({
+        name: "unlayer",
+        title: "Unlayer",
+        icon: "https://files.readme.io/5f5ad38-small-favicon.png",
+        view: {
+          type: "iframe",
+          src: "https://docs.unlayer.com/docs/getting-started",
+        },
+      });
+    }
   },
 });
