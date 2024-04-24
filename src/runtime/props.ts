@@ -30,6 +30,26 @@ export interface HTMLExport {
   readonly amp?: Record<string, any> | undefined;
 }
 
+export interface PlainTextExport {
+  /** This is the full plain text of the design */
+  readonly text: string;
+  /** This is the JSON of the design */
+  readonly design: Design;
+}
+
+export interface PLainTextExportOptions {
+  /** Links and buttons will not be included */
+  readonly ignoreLinks?: boolean;
+  /** Image alt text will not be included */
+  readonly ignoreImages?: boolean;
+  /** Pre-header text for emails will not be included. */
+  readonly ignorePreheader?: boolean;
+  /**
+   * If you want the Merge Tags in your design to be replaced by different values, you can pass the mergeTags object to export options.
+   */
+  readonly mergeTags?: MergeTag;
+}
+
 export interface HtmlOptions {
   readonly cleanup?: boolean;
   readonly minify?: boolean;
@@ -211,7 +231,10 @@ export type EditorInstance = {
   saveDesign(callback: (data: Design) => void, options?: any): void;
   exportHtml(callback: (data: HTMLExport) => void, options?: HtmlOptions): void;
   exportLiveHtml(callback: (data: any) => void, options?: any): void;
-  exportPlainText(callback: (data: any) => void, options?: any): void;
+  exportPlainText(
+    callback: (data: PlainTextExport) => void,
+    options?: PLainTextExportOptions
+  ): void;
   exportImage(callback: (data: any) => void, options?: any): void;
   exportPdf(callback: (data: any) => void, options?: any): void;
   exportZip(callback: (data: any) => void, options?: any): void;
