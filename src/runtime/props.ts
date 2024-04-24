@@ -23,6 +23,19 @@ export interface Design {
   readonly schemaVersion?: number;
 }
 
+export interface HTMLExport {
+  readonly html: string;
+  readonly design: Design;
+  readonly chunks?: Record<string, string> | undefined;
+  readonly amp?: Record<string, any> | undefined;
+}
+
+export interface HtmlOptions {
+  readonly cleanup?: boolean;
+  readonly minify?: boolean;
+  readonly mergeTags?: MergeTag;
+}
+
 export interface User {
   readonly id?: number | undefined;
   readonly name?: string | undefined;
@@ -196,7 +209,7 @@ export type EditorInstance = {
   loadBlank(bodyValues?: object): void;
   loadDesign(design: any): void;
   saveDesign(callback: (data: Design) => void, options?: any): void;
-  exportHtml(callback: (data: any) => void, options?: any): void;
+  exportHtml(callback: (data: HTMLExport) => void, options?: HtmlOptions): void;
   exportLiveHtml(callback: (data: any) => void, options?: any): void;
   exportPlainText(callback: (data: any) => void, options?: any): void;
   exportImage(callback: (data: any) => void, options?: any): void;
