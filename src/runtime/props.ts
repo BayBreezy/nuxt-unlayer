@@ -327,6 +327,22 @@ export type EditorInstance = {
   unregisterProvider(type: string): void;
   reloadProvider(type: string): void;
   addEventListener(type: string, callback: Function): void;
+  addEventListener(type: "editor:ready", callback: () => void): void;
+  addEventListener(
+    type: "design:loaded",
+    callback: (data: Design) => void
+  ): void;
+  addEventListener(type: "design:updated", callback: (data: any) => void): void;
+  addEventListener(
+    type: "image:uploaded",
+    callback: (data: {
+      image: {
+        url: string;
+        height?: number | string;
+        width?: number | string;
+      };
+    }) => void
+  ): void;
   removeEventListener(type: string): void;
   setDesignId(id: string | null): void;
   setDesignMode(designMode: string): void;
