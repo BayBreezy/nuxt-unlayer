@@ -33,6 +33,15 @@ export interface ImageExportOptions {
   readonly mergeTags?: MergeTag;
 }
 
+export interface PDFExport {
+  /** This is the URL of the generated PDF */
+  readonly url: string;
+  readonly design: Design;
+}
+export interface PDFExportOptions {
+  readonly mergeTags?: MergeTag;
+}
+
 export interface HTMLExport {
   readonly html: string;
   readonly design: Design;
@@ -249,7 +258,10 @@ export type EditorInstance = {
     callback: (data: ImageExport) => void,
     options?: ImageExportOptions
   ): void;
-  exportPdf(callback: (data: any) => void, options?: any): void;
+  exportPdf(
+    callback: (data: PDFExport) => void,
+    options?: PDFExportOptions
+  ): void;
   exportZip(callback: (data: any) => void, options?: any): void;
   setAppearance(appearance: Partial<AppearanceConfig>): void;
   setBodyValues(bodyValues: any, bodyId?: number): void;
