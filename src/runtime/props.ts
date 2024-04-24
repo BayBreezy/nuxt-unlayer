@@ -1,4 +1,4 @@
-export type DisplayMode = "email" | "web";
+export type DisplayMode = "email" | "web" | "popup";
 export type ThemeColor = "light" | "dark";
 export type DockPosition = "right" | "left";
 export interface AppearanceConfig {
@@ -33,6 +33,14 @@ export interface ImageExportOptions {
   readonly mergeTags?: MergeTag;
 }
 
+export interface ZipExport {
+  readonly url: string;
+  readonly design: Design;
+}
+
+export interface ZipExportOptions {
+  readonly mergeTags?: MergeTag;
+}
 export interface PDFExport {
   /** This is the URL of the generated PDF */
   readonly url: string;
@@ -262,7 +270,10 @@ export type EditorInstance = {
     callback: (data: PDFExport) => void,
     options?: PDFExportOptions
   ): void;
-  exportZip(callback: (data: any) => void, options?: any): void;
+  exportZip(
+    callback: (data: ZipExport) => void,
+    options?: ZipExportOptions
+  ): void;
   setAppearance(appearance: Partial<AppearanceConfig>): void;
   setBodyValues(bodyValues: any, bodyId?: number): void;
   setDesignTagsConfig(designTagsConfig: any): void;
