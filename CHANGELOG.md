@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.7
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.6...v0.0.7)
+
+### 🏡 Chore
+
+- **lint & deps:** Update deps & improve linter ([3e44c64](https://github.com/BayBreezy/nuxt-unlayer/commit/3e44c64))
+- Add afterClone script ([7daeb3c](https://github.com/BayBreezy/nuxt-unlayer/commit/7daeb3c))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.6
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.5...v0.0.6)
