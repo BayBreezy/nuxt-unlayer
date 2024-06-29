@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.8
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.7...v0.0.8)
+
+### 🏡 Chore
+
+- **editor:** Remove withDefaults import ([7ad6373](https://github.com/BayBreezy/nuxt-unlayer/commit/7ad6373))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.7
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.6...v0.0.7)
