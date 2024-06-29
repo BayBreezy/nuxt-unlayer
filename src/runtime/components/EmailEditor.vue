@@ -1,8 +1,5 @@
 <template>
-  <div
-    :id="theId"
-    style="height: 100%"
-  />
+  <div :id="theId" style="height: 100%" />
 </template>
 
 <script setup lang="ts">
@@ -17,7 +14,6 @@ import {
   watch,
   useState,
 } from "#imports";
-import { withDefaults } from "vue";
 import type { EditorProps, EditorInstance } from "../props";
 const theId = useState("editor-id", () => uuidv4());
 const emits = defineEmits(["ready"]);
