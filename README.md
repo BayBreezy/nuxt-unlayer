@@ -1,4 +1,4 @@
-<img src="/unlayer.png" style="height: 70px;"/>
+<img src="./unlayer.png" style="height: 70px;"/>
 
 # Nuxt Unlayer
 
@@ -6,12 +6,13 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
+![Demo Image](./screenshot.png)
+
 > Add the [Unlayer Editor](https://docs.unlayer.com/docs) to your [Nuxt](https://nuxt.com) app easily.
 
 ## Demo
 
-** Click `Open in New Tab` when you visit this link **
-Here is a link to the demo [Nuxt unlayer demo](https://stackblitz.com/edit/nuxt-starter-tzl335?file=app.vue)
+The Demo is available at [Nuxt Unlayer Playground](https://nuxt-unlayer.behonbaker.com/)
 
 ## Quick Setup
 
@@ -120,7 +121,7 @@ const exportHTML = () => {
 
 ## Screenshot of playground
 
-<img src="/screenshot.png" style=""/>
+<img src="./screenshot.png" style=""/>
 
 ## Development
 
