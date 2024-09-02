@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 export type DisplayMode = "email" | "web" | "popup";
 export type ThemeColor = "light" | "dark";
 export type DockPosition = "right" | "left";
@@ -203,7 +204,7 @@ export interface CustomButton {
   text: string;
   icon: string;
   onSetup: () => object;
-  // eslint-disable-next-line @typescript-eslint/ban-types
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   onAction: (data: any, callback: Function) => void;
 }
 
@@ -502,7 +503,6 @@ export interface LinkType {
   attrs?: {
     href?: string;
     target?: string;
-    // eslint-disable-next-line @typescript-eslint/ban-types
     onClick?: string | Function;
     class?: string;
     [key: string]: any;
@@ -528,18 +528,15 @@ export type EditorInstance = {
    * @see https://docs.unlayer.com/docs/custom-columns
    */
   registerColumns(cells: number[]): void;
-  // eslint-disable-next-line @typescript-eslint/ban-types
   registerCallback(type: string, callback: Function): void;
   registerCallback(
     type: "image",
     callback: (file: FileInfo, done: (data: FileUploadDoneData) => void) => void
   ): void;
   unregisterCallback(type: string): void;
-  // eslint-disable-next-line @typescript-eslint/ban-types
   registerProvider(type: string, callback: Function): void;
   unregisterProvider(type: string): void;
   reloadProvider(type: string): void;
-  // eslint-disable-next-line @typescript-eslint/ban-types
   addEventListener(type: string, callback: Function): void;
   addEventListener(type: "editor:ready", callback: () => void): void;
   addEventListener(

@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import { useHead, shallowRef, ref } from "#imports";
 import sample from "@/sample.json";
-import { type EditorInstance } from "#unlayer/props";
+import type { EditorInstance } from "#unlayer/props";
 
 useHead({ title: "Nuxt - Unlayer" });
 
