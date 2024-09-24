@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.11
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.10...v0.0.11)
+
+### 🏡 Chore
+
+- Bump deps ([1c482ac](https://github.com/BayBreezy/nuxt-unlayer/commit/1c482ac))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.10
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.9...v0.0.10)
