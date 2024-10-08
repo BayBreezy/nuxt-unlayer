@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.0.12
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.11...v0.0.12)
+
+### 📖 Documentation
+
+- Create nuxt app for docs ([bc87100](https://github.com/BayBreezy/nuxt-unlayer/commit/bc87100))
+- Add ui-thing to the docs ([b4c1d67](https://github.com/BayBreezy/nuxt-unlayer/commit/b4c1d67))
+
+### 🏡 Chore
+
+- Bump deps ([f25b676](https://github.com/BayBreezy/nuxt-unlayer/commit/f25b676))
+
+### 🤖 CI
+
+- **dependabot:** Check for deps updates in playground too ([8090725](https://github.com/BayBreezy/nuxt-unlayer/commit/8090725))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.11
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.10...v0.0.11)
