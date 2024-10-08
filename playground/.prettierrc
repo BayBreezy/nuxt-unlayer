@@ -9,6 +9,6 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": true,
-  "tailwindFunctions": ["tv", "tw"],
+  "tailwindFunctions": ["tv"],
   "importOrder": ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "<TYPES>", "", "^[.]"]
 }
