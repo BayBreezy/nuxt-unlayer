@@ -32,7 +32,6 @@
   import type { EditorInstance } from "#unlayer/props";
 
   useHead({ title: "Nuxt - Unlayer" });
-  const colorMode = useColorMode();
 
   const editor = shallowRef<EditorInstance | null | undefined>();
   const hiddenFile = ref();

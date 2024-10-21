@@ -11,8 +11,9 @@ export default createConfigForNuxt({
     },
     ignores: ["dist", "node_modules"],
   })
-  .override("nuxt", {
+  .override("nuxt/vue/rules", {
     rules: {
       "vue/require-default-prop": "off",
+      "vue/multi-word-component-names": "off",
     },
   });

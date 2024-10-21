@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /// <reference types="unlayer-types/embed.d.ts" />
 
@@ -211,7 +212,6 @@ export interface CustomButton {
   text: string;
   icon: string;
   onSetup: () => object;
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   onAction: (data: any, callback: Function) => void;
 }
 
