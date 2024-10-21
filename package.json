@@ -32,7 +32,8 @@
     "dist"
   ],
   "scripts": {
-    "afterClone": "npm i && npm run dev:prepare",
+    "afterClone": "npm i && cd playground && npm i && cd .. && npm run dev:prepare",
+    "automd": "npx --yes automd@latest",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
@@ -41,24 +42,25 @@
     "netlify": "npm run afterClone && npm run prepack && npm run dev:build",
     "prepack": "nuxt-module-build",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "rm:lock": "rm -rf package-lock.json playground/package-lock.json",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "dependencies": {
     "@nuxt/kit": "^3.13.2",
     "defu": "^6.1.4",
-    "unlayer-types": "^1.111.0",
+    "unlayer-types": "^1.131.0",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.5.7",
+    "@nuxt/eslint-config": "^0.6.0",
     "@nuxt/module-builder": "^0.8.4",
     "@nuxt/schema": "^3.13.2",
-    "@nuxt/test-utils": "^3.14.3",
+    "@nuxt/test-utils": "^3.14.4",
     "@types/uuid": "^10.0.0",
     "changelogen": "^0.5.7",
-    "eslint": "^9.12.0",
+    "eslint": "^9.13.0",
     "nuxt": "^3.13.2",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.3"
   }
 }

@@ -4,9 +4,15 @@ export default createConfigForNuxt({
   features: {
     tooling: true,
   },
-}).override("nuxt/typescript/rules", {
-  rules: {
-    "@typescript-eslint/no-explicit-any": "off",
-  },
-  ignores: ["dist", "node_modules"],
-});
+})
+  .override("nuxt/typescript/rules", {
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+    ignores: ["dist", "node_modules"],
+  })
+  .override("nuxt", {
+    rules: {
+      "vue/require-default-prop": "off",
+    },
+  });

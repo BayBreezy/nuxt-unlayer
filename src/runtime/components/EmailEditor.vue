@@ -15,6 +15,7 @@ import {
   useState,
 } from "#imports";
 import type { EditorProps, EditorInstance } from "../props";
+import type { ShallowRef } from "vue";
 const theId = useState("editor-id", () => uuidv4());
 const emits = defineEmits(["ready"]);
 
@@ -24,7 +25,15 @@ const props = withDefaults(defineProps<EditorProps>(), {
   locale: "en-US",
 });
 
-const editorInstance = shallowRef<EditorInstance | null | undefined>();
+const editorInstance: ShallowRef<EditorInstance | undefined> = shallowRef<
+  EditorInstance | null | undefined
+>();
+
+declare global {
+  interface Window {
+    unlayer?: any;
+  }
+}
 
 const loadEditor = async () => {
   const data = toRef(() => props);

@@ -15,7 +15,7 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     // add unlayer to script tags
     nuxt.options.app.head.script?.push({
-      src: "//editor.unlayer.com/embed.js",
+      src: "https://editor.unlayer.com/embed.js?2",
     });
     // create resolver
     const resolver = createResolver(import.meta.url);
@@ -28,18 +28,6 @@ export default defineNuxtModule<ModuleOptions>({
       name: "EmailEditor",
       filePath: resolver.resolve("./runtime/components/EmailEditor.vue"),
       mode: "client",
-    });
-
-    nuxt.hook("devtools:customTabs", (tabs) => {
-      tabs.push({
-        name: "unlayer",
-        title: "Unlayer",
-        icon: "https://files.readme.io/5f5ad38-small-favicon.png",
-        view: {
-          type: "iframe",
-          src: "https://docs.unlayer.com/docs/getting-started",
-        },
-      });
     });
   },
 });

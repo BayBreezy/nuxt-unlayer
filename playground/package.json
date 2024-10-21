@@ -1,6 +1,7 @@
 {
-  "name": "my-module-playground",
+  "name": "nuxt-unlayer-playground",
   "private": false,
+  "description": "This codebase holds the playground for the Nuxt Unlayer module",
   "license": "MIT",
   "author": {
     "name": "Behon Baker",
@@ -18,24 +19,27 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "ui:add": "npx --yes ui-thing@latest add"
   },
   "dependencies": {
     "nuxt": "3.13.2",
     "radix-vue": "^1.9.7",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "vue-sonner": "^1.2.3"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
-    "@nuxt/icon": "^1.5.5",
+    "@nuxt/icon": "^1.5.6",
     "@nuxtjs/color-mode": "^3.5.1",
-    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@nuxtjs/tailwindcss": "^6.12.2",
     "@tailwindcss/forms": "^0.5.9",
+    "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "husky": "^9.1.6",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   }
 }

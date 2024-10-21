@@ -10,28 +10,21 @@ export default defineNuxtConfig({
     "@nuxt/icon",
   ],
 
-  css: ["@/assets/main.css"],
+  icon: { clientBundle: { scan: true, sizeLimitKb: 0 } },
   compatibilityDate: "2024-10-08",
-
-  tailwindcss: {
-    exposeConfig: true,
-  },
-
-  colorMode: {
-    classSuffix: "",
-  },
+  tailwindcss: { exposeConfig: true },
+  colorMode: { classSuffix: "", preference: "light", fallback: "light" },
 
   imports: {
     imports: [
+      { from: "tailwind-variants", name: "tv" },
+      { from: "tailwind-variants", name: "VariantProps", type: true },
       {
-        from: "tailwind-variants",
-        name: "tv",
-      },
-      {
-        from: "tailwind-variants",
-        name: "VariantProps",
-        type: true,
+        from: "vue-sonner",
+        name: "toast",
+        as: "useSonner",
       },
     ],
   },
+  build: { transpile: ["vue-sonner"] },
 });

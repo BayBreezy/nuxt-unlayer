@@ -1,4 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
+/// <reference types="unlayer-types/embed.d.ts" />
+
+import Embed from "embed/index";
+import { Editor as EditorClass } from "embed/Editor";
+import type { Config } from "embed/Config";
+// import type { AppearanceConfig, DisplayMode, ToolsConfig } from 'state/types/types';
+
 export type DisplayMode = "email" | "web" | "popup";
 export type ThemeColor = "light" | "dark";
 export type DockPosition = "right" | "left";

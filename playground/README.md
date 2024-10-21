@@ -9,7 +9,7 @@
 
 <!-- /automd -->
 
-![Demo Image](./playground/public/image.jpg)
+![Demo Image](./public/image.jpg)
 
 - [ Nuxt Unlayer](#-nuxt-unlayer)
   - [ Demo](#-demo)
@@ -201,7 +201,6 @@ That's it! You can now use Nuxt Unlayer in your Nuxt app ✨
     ],
   });
 </script>
-
 ```
 
 <!-- /automd -->
@@ -210,7 +209,7 @@ That's it! You can now use Nuxt Unlayer in your Nuxt app ✨
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Camera%20with%20Flash.png" alt="Camera with Flash" width="25" height="25" /> Screenshot
 
-<img src="./playground/public/image.jpg" style=""/>
+<img src="./public/image.jpg" style=""/>
 
 ## Development
 
