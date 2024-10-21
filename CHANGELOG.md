@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.13
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.12...v0.0.13)
+
+### 🏡 Chore
+
+- Bump deps and improve docs ([86b9a2b](https://github.com/BayBreezy/nuxt-unlayer/commit/86b9a2b))
+
+### 🎨 Styles
+
+- **eslint:** Lint codebase ([180604a](https://github.com/BayBreezy/nuxt-unlayer/commit/180604a))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.12
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.11...v0.0.12)
