@@ -49,8 +49,8 @@
   "dependencies": {
     "@nuxt/kit": "^3.13.2",
     "defu": "^6.1.4",
-    "unlayer-types": "^1.131.0",
-    "uuid": "^10.0.0"
+    "unlayer-types": "^1.152.0",
+    "uuid": "^11.0.1"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.6.0",
