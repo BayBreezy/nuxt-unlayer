@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.15
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.14...v0.0.15)
+
+### 🏡 Chore
+
+- **release:** V0.0.14 ([39c7f36](https://github.com/BayBreezy/nuxt-unlayer/commit/39c7f36))
+- **deps-dev:** Bump @nuxt/eslint-config from 0.6.0 to 0.6.1 ([a787abe](https://github.com/BayBreezy/nuxt-unlayer/commit/a787abe))
+- **deps-dev:** Bump vitest from 2.1.3 to 2.1.4 ([b309ce2](https://github.com/BayBreezy/nuxt-unlayer/commit/b309ce2))
+- **deps-dev:** Bump @nuxt/icon from 1.5.8 to 1.6.1 in /playground ([a7c3780](https://github.com/BayBreezy/nuxt-unlayer/commit/a7c3780))
+- Bump deps ([e9dc2fb](https://github.com/BayBreezy/nuxt-unlayer/commit/e9dc2fb))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.14
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.13...v0.0.14)
