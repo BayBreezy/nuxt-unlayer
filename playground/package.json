@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "nuxt": "3.14.0",
-    "radix-vue": "^1.9.8",
+    "radix-vue": "^1.9.9",
     "tailwind-variants": "^0.2.1",
     "vue-sonner": "^1.2.5"
   },
