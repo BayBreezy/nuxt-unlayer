@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.16
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.15...v0.0.16)
+
+### 🏡 Chore
+
+- **release:** V0.0.15 ([c76bc63](https://github.com/BayBreezy/nuxt-unlayer/commit/c76bc63))
+- Bump deps ([45ef0d1](https://github.com/BayBreezy/nuxt-unlayer/commit/45ef0d1))
+- Update dependabot config ([eb034e0](https://github.com/BayBreezy/nuxt-unlayer/commit/eb034e0))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](http://github.com/BayBreezy))
+
 ## v0.0.15
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.14...v0.0.15)
