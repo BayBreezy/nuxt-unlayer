@@ -23,7 +23,7 @@
     "ui:add": "npx --yes ui-thing@latest add"
   },
   "dependencies": {
-    "nuxt": "3.14.159",
+    "nuxt": "3.14.1592",
     "radix-vue": "^1.9.10",
     "tailwind-variants": "^0.3.0",
     "vue-sonner": "^1.2.5"
