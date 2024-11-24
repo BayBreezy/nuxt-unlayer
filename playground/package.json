@@ -26,7 +26,7 @@
     "nuxt": "3.14.159",
     "radix-vue": "^1.9.10",
     "tailwind-variants": "^0.3.0",
-    "vue-sonner": "^1.2.5"
+    "vue-sonner": "^1.3.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
