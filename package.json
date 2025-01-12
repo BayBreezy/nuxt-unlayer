@@ -1,6 +1,6 @@
 {
   "name": "nuxt-unlayer",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Module used to add the Unlayer email builder to your Nuxt app.",
   "keywords": [
     "nuxt",
