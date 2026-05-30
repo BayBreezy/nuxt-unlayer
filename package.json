@@ -44,7 +44,7 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint src/",
-    "netlify": "nr prepack && cd docs && bun i --frozen-lockfile && bun run build",
+    "netlify": "nr dev:prepare && nr prepack && cd docs && bun i --frozen-lockfile && bun run build",
     "prepack": "nuxt-module-build build",
     "prepare": "husky",
     "release": "nr lint && nr fmt:check && nr prepack && changelogen --release && npm publish && git push --follow-tags"
