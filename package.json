@@ -61,6 +61,7 @@
     "@commitlint/config-conventional": "^21.0.2",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.6",
+    "@types/node": "latest",
     "@types/uuid": "^11.0.0",
     "changelogen": "^0.6.2",
     "husky": "^9.1.7",
