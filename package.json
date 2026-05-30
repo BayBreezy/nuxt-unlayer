@@ -3,22 +3,27 @@
   "version": "0.0.22",
   "description": "Module used to add the Unlayer email builder to your Nuxt app.",
   "keywords": [
+    "builder",
+    "email",
     "nuxt",
     "nuxt3",
-    "unlayer",
-    "email",
-    "builder"
+    "unlayer"
   ],
-  "repository": {
-    "url": "git+https://github.com/BayBreezy/nuxt-unlayer.git"
-  },
   "license": "MIT",
   "author": {
     "name": "Behon Baker",
     "email": "behon.baker@yahoo.com",
     "url": "https://behonbaker.com/"
   },
+  "repository": {
+    "url": "git+https://github.com/BayBreezy/nuxt-unlayer.git"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -26,41 +31,44 @@
       "require": "./dist/module.cjs"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "afterClone": "npm i && cd playground && npm i && cd .. && npm run dev:prepare",
-    "automd": "npx --yes automd@latest",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxi prepare playground",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "netlify": "npm run afterClone && npm run prepack && npm run dev:build",
+    "clean": "node ./scripts/clean.mjs",
+    "dev": "cd docs && nr dev",
+    "dev:build": "cd docs && nr build",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint src/",
+    "netlify": "nr prepack && cd docs && bun i --frozen-lockfile && bun run build",
     "prepack": "nuxt-module-build build",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
-    "rm:lock": "rm -rf package-lock.json playground/package-lock.json",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "prepare": "husky",
+    "release": "nr lint && nr fmt:check && nr test && nr prepack && changelogen --release && npm publish && git push --follow-tags"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.15.1",
-    "defu": "^6.1.4",
-    "unlayer-types": "^1.192.0",
-    "uuid": "^11.0.5"
+    "@nuxt/kit": "^4.4.6",
+    "@unlayer/types": "^1.420.0",
+    "defu": "^6.1.7",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.7.5",
-    "@nuxt/module-builder": "^0.8.4",
-    "@nuxt/schema": "^3.15.1",
-    "@nuxt/test-utils": "^3.15.4",
-    "@types/uuid": "^10.0.0",
-    "changelogen": "^0.5.7",
-    "eslint": "^9.18.0",
-    "nuxt": "^3.15.1",
-    "vitest": "^2.1.8"
-  }
+    "@antfu/ni": "^30.1.0",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.4.6",
+    "@types/uuid": "^11.0.0",
+    "changelogen": "^0.6.2",
+    "husky": "^9.1.7",
+    "nuxt": "^4.4.6",
+    "oxfmt": "^0.52.0",
+    "oxlint": "^1.67.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,css,mjs,cjs}": "oxfmt --no-error-on-unmatched-pattern",
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "nr lint"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "esbuild"
+  ]
 }
