@@ -9,23 +9,39 @@
 
 <!-- /automd -->
 
-![Demo Image](./playground/public/image.jpg)
+Add the [Unlayer](https://unlayer.com) drag-and-drop email builder to your Nuxt application in minutes.
 
-- [ Nuxt Unlayer](#-nuxt-unlayer)
-  - [ Demo](#-demo)
-  - [ Quick Setup](#-quick-setup)
-  - [ Full Example](#-full-example)
-  - [ Screenshot](#-screenshot)
+![Demo Image](./docs/public/image.jpg)
+
+- [Nuxt Unlayer](#-nuxt-unlayer)
+  - [Features](#features)
+  - [Demo](#-demo)
+  - [Quick Setup](#-quick-setup)
+  - [Basic Usage](#-basic-usage)
+  - [Loading a Design](#-loading-a-design)
+  - [Saving & Exporting](#-saving--exporting)
+  - [Props](#-props)
+  - [Events](#-events)
+  - [TypeScript](#-typescript)
   - [Development](#development)
   - [Contributors](#contributors)
 
+## Features
+
+- **Drop-in component** — `<EmailEditor>` is registered globally and works as a client-only component with zero extra config
+- **Full Unlayer API as props** — every option from the Unlayer `Config` interface is available as a Vue prop with full TypeScript types
+- **`initialDesign` prop** — preload a saved design at mount time; reactively calls `loadDesign` whenever the value changes
+- **Smart reactivity** — props with a live Unlayer setter method (`mergeTags`, `appearance`, `locale`, `linkTypes`, `user`, `tabs`, and more) update the canvas in-place without destroying the editor or losing the user's work
+- **Vue events** — `@ready`, `@design:updated`, `@design:loaded`, and `@image:uploaded` are wired up automatically
+- **TypeScript** — all Unlayer types are re-exported from `#unlayer/props` so you only need one import
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Roller%20Coaster.png" alt="Roller Coaster" width="25" height="25" /> Demo
 
-The Demo is available at [Nuxt Unlayer Playground](https://nuxt-unlayer.behonbaker.com/)
+Live demo and full documentation: [nuxt-unlayer.behonbaker.com](https://nuxt-unlayer.behonbaker.com/)
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Milky%20Way.png" alt="Milky Way" width="25" height="25" /> Quick Setup
 
-1. Add `nuxt-unlayer` dependency to your project
+1. Add `nuxt-unlayer` to your project
 
 <!-- automd:pm-install name="nuxt-unlayer" separate -->
 
@@ -61,181 +77,159 @@ deno install nuxt-unlayer
 
 <!-- /automd -->
 
-1. Add `nuxt-unlayer` to the `modules` section of `nuxt.config.ts`
+2. Add `nuxt-unlayer` to your `nuxt.config.ts`
 
-```js
+```ts
 export default defineNuxtConfig({
   modules: ["nuxt-unlayer"],
 });
 ```
 
-That's it! You can now use Nuxt Unlayer in your Nuxt app ✨
+That's it. The module registers `<EmailEditor>` globally and injects the Unlayer embed script into `<head>` automatically.
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> Full Example
+> **Note** — `EmailEditor` is a client-only component. It will never execute on the server; you do not need to wrap it in `<ClientOnly>`.
 
-<details>
-<summary>Full Example</summary>
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> Basic Usage
 
-<!-- automd:file src="./playground/app/app.vue" lang="vue" code -->
+Give the parent element a fixed height — the editor fills 100% of its container.
 
-```vue [app.vue]
+```vue
 <template>
-  <main class="main">
-    <UiNavbar sticky>
-      <div class="flex h-16 max-w-screen-2xl items-center justify-between px-5">
-        <h1 class="text-lg font-semibold tracking-tight">Nuxt Unlayer</h1>
-        <div v-if="editor" class="flex items-center gap-2">
-          <UiButton variant="outline" size="sm" @click="exportHTML">Export HTML</UiButton>
-          <UiButton variant="outline" @click="hiddenFile.click()">Import Design</UiButton>
-          <UiButton class="btn" @click="saveDesign">Save Design</UiButton>
-        </div>
-      </div>
-    </UiNavbar>
-    <section class="h-[calc(100dvh-65px)]">
-      <ClientOnly>
-        <EmailEditor
-          display-mode="email"
-          :appearance="{
-            theme: 'dark',
-          }"
-          @ready="editorLoaded"
-        />
-      </ClientOnly>
-    </section>
-  </main>
-  <!-- eslint-disable-next-line vue/html-self-closing -->
-  <input ref="hiddenFile" type="file" hidden accept=".json" @change="importDesign" />
-  <UiVueSonner />
+  <div style="height: 100dvh">
+    <EmailEditor @ready="onReady" />
+  </div>
 </template>
 
 <script setup lang="ts">
-  import sample from "@@/sample.json";
   import type { EditorInstance } from "#unlayer/props";
 
-  useHead({ title: "Nuxt - Unlayer" });
-  const colorMode = useColorMode();
+  const editor = shallowRef<EditorInstance>();
 
-  const editor = shallowRef<EditorInstance | null | undefined>();
-  const hiddenFile = ref();
-
-  const editorLoaded = (value: any) => {
-    console.log("🚀 ~ file: app.vue:23 ~ editorLoaded ~ value", value);
-    editor.value = value;
-
-    // load up design after the editor gets loaded
-    editor.value?.loadDesign(JSON.parse(JSON.stringify(sample)));
-    useSonner.success("Editor Loaded", {
-      duration: 2000,
-      description: "You can now start designing your email template",
-    });
+  const onReady = (instance: EditorInstance | undefined) => {
+    editor.value = instance;
   };
-
-  const saveDesign = () => {
-    editor.value?.saveDesign((design: any) => {
-      useSonner.success("Design Saved", {
-        duration: 2000,
-        description:
-          "Your design has been saved successfully. CHeck the console for the design object",
-      });
-      console.log("🚀 ~ file: app.vue:31 ~ editor.value.saveDesign ~ design", design);
-    });
-  };
-
-  const importDesign = (e: any) => {
-    if (!e) return;
-    const file = e.target.files[0];
-    if (!file.type.includes("json")) return;
-    const reader = new FileReader();
-
-    reader.onload = function (readVal) {
-      const result = readVal.target?.result;
-      if (typeof result === "string") {
-        editor.value?.loadDesign(JSON.parse(result));
-        useSonner.success("Design Imported", {
-          duration: 2000,
-          description: "Your design has been imported successfully",
-        });
-      }
-    };
-    reader.readAsText(file);
-  };
-  const exportHTML = () => {
-    editor.value?.exportHtml((data: any) => {
-      const json = data.design; // design json
-      console.log("🚀 ~ file: app.vue:40 ~ editor.value.exportHtml ~ json", json);
-      const html = data.html; // final html
-      console.log("🚀 ~ file: app.vue:42 ~ editor.value.exportHtml ~ html", html);
-      useSonner.success("HTML Exported", {
-        duration: 2000,
-        description: "Your design has been exported successfully. Check the console for the HTML",
-      });
-    });
-  };
-
-  const title = "Nuxt Unlayer";
-  const description = "Easily add unlayer to your Nuxt application";
-  const image = "/image.jpg";
-  const url = "https://nuxt-unlayer.behonbaker.com";
-  useSeoMeta({
-    description,
-    ogTitle: title,
-    ogDescription: description,
-    ogImage: image,
-    twitterTitle: title,
-    ogUrl: url,
-    twitterDescription: description,
-    twitterImage: image,
-    twitterCard: "summary_large_image",
-  });
-
-  useHead({
-    htmlAttrs: {
-      lang: "en",
-    },
-    link: [
-      {
-        rel: "icon",
-        type: "image/png",
-        href: "/UnlayerIcon.png",
-      },
-    ],
-  });
 </script>
-
 ```
 
-<!-- /automd -->
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Floppy%20Disk.png" alt="Floppy Disk" width="25" height="25" /> Loading a Design
 
-</details>
+Pass a saved `JSONTemplate` to the `initial-design` prop. It loads the design once the editor is ready and reloads whenever the value changes — no manual `loadDesign()` call needed.
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Camera%20with%20Flash.png" alt="Camera with Flash" width="25" height="25" /> Screenshot
+```vue
+<template>
+  <EmailEditor :initial-design="myDesign" @ready="onReady" />
+</template>
 
-<img src="./playground/public/image.jpg" style=""/>
+<script setup lang="ts">
+  import type { JSONTemplate, EditorInstance } from "#unlayer/props";
+
+  const myDesign = ref<JSONTemplate>(); // fetch from your API
+  const editor = shallowRef<EditorInstance>();
+
+  const onReady = (instance: EditorInstance | undefined) => {
+    editor.value = instance;
+  };
+</script>
+```
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Inbox%20Tray.png" alt="Inbox Tray" width="25" height="25" /> Saving & Exporting
+
+```ts
+// Save the design as JSON (to store in your database)
+editor.value?.saveDesign((design) => {
+  // design is a JSONTemplate — persist it however you like
+});
+
+// Export finished HTML (ready to send as an email)
+editor.value?.exportHtml((data) => {
+  const html = data.html;    // full HTML document
+  const json = data.design;  // JSONTemplate
+});
+
+// Export as plain text (multi-part emails)
+editor.value?.exportPlainText((data) => {
+  const text = data.text;
+});
+```
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Wrench.png" alt="Wrench" width="25" height="25" /> Props
+
+`<EmailEditor>` accepts every option from the [Unlayer Config](https://docs.unlayer.com/builder/configuration) interface. The table below covers the most commonly used props.
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `display-mode` | `'email' \| 'web' \| 'popup' \| 'document'` | `'email'` | Editor mode |
+| `locale` | `string` | `'en-US'` | BCP 47 locale for UI translations |
+| `appearance` | `AppearanceConfig` | — | Theme and panel layout options |
+| `fonts` | `Fonts` | `{ showDefaultFonts: false }` | Font list shown in the editor |
+| `merge-tags` | `MergeTags` | — | Dynamic content placeholders |
+| `features` | `Features` | — | Enable/disable editor features (AI, stock images, etc.) |
+| `tools` | `ToolsConfig` | — | Enable/disable/reorder content blocks |
+| `exclude-tools` | `string[]` | — | Remove specific tools by name |
+| `user` | `User` | — | Authenticated user for saved blocks |
+| `project-id` | `number` | — | Unlayer project ID |
+| `initial-design` | `JSONTemplate` | — | Design to load on mount (reactive) |
+| `tabs` | `Tabs` | — | Customise sidebar panel tabs |
+
+**Reactive props** (change these at any time without losing the user's work): `merge-tags`, `appearance`, `locale`, `text-direction`, `translations`, `link-types`, `display-conditions`, `special-links`, `design-tags-config`, `merge-tags-config`, `display-mode`, `tabs`, `user`, `validator`, `initial-design`.
+
+**Re-init props** (editor is destroyed and recreated — save the design first): `tools`, `exclude-tools`, `blocks`, `editor`, `fonts`, `safe-html`, `custom-css`, `custom-js`, `features`, `design-tags`, `project-id`.
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="25" height="25" /> Events
+
+| Event | Payload | Description |
+|---|---|---|
+| `@ready` | `EditorInstance \| undefined` | Editor is created and ready |
+| `@design:updated` | `{ type, item?, changes? }` | User modified the design |
+| `@design:loaded` | `{ design: JSONTemplate }` | A design was loaded into the canvas |
+| `@image:uploaded` | `{ image: { url, width?, height? } }` | User uploaded an image |
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="25" height="25" /> TypeScript
+
+All types are re-exported from `#unlayer/props`:
+
+```ts
+import type {
+  EditorInstance,        // live editor reference from @ready
+  EditorProps,           // full props type (= UnlayerOptions)
+  JSONTemplate,          // saved design JSON
+  ExportHtmlResult,      // exportHtml callback data
+  ExportHtmlOptions,
+  ExportPlainTextResult,
+  MergeTags,
+  Features,
+  Fonts,
+  AppearanceConfig,
+  Tabs,
+  User,
+  // ...and more
+} from "#unlayer/props";
+```
 
 ## Development
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Generate type stubs
-npm run dev:prepare
+bun run dev:prepare
 
-# Develop with the playground
-npm run dev
+# Develop with the docs
+bun run dev
 
-# Build the playground
-npm run dev:build
+# Build the docs
+bun run dev:build
 
 # Run ESLint
-npm run lint
+bun run lint
 
 # Run Vitest
-npm run test
-npm run test:watch
+bun run test
+bun run test:watch
 
 # Release new version
-npm run release
+bun run release
 ```
 
 ## Contributors
