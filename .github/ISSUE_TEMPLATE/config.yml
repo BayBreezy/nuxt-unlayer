@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://nuxt-unlayer.behonbaker.com/docs/getting-started
+    about: Read the docs before opening an issue.
+  - name: Unlayer Documentation
+    url: https://docs.unlayer.com
+    about: For questions about the Unlayer editor itself (not this module).
+  - name: Buy me a coffee
+    url: https://buymeacoffee.com/llehXIrI8g
+    about: If nuxt-unlayer saved you time, consider buying me a coffee!
