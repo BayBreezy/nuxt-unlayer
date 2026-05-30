@@ -1,5 +1,45 @@
 # Changelog
 
+## v0.1.0
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.22...v0.1.0)
+
+### 🚀 Enhancements
+
+- Extend Vite configuration to include 'uuid' in optimizeDeps ([ae95338](https://github.com/BayBreezy/nuxt-unlayer/commit/ae95338))
+- Enhance EmailEditor component with improved event handling and design loading ([44d1328](https://github.com/BayBreezy/nuxt-unlayer/commit/44d1328))
+
+### 💅 Refactors
+
+- Clean up and streamline props.ts by removing unused types and imports ([3249ff6](https://github.com/BayBreezy/nuxt-unlayer/commit/3249ff6))
+- Remove unnecessary reference to unlayer-types in props.ts ([99a7a51](https://github.com/BayBreezy/nuxt-unlayer/commit/99a7a51))
+- Remove unused configuration files and test fixtures ([7ec2445](https://github.com/BayBreezy/nuxt-unlayer/commit/7ec2445))
+
+### 📖 Documentation
+
+- Create new docs for module ([a6e2b3d](https://github.com/BayBreezy/nuxt-unlayer/commit/a6e2b3d))
+- Update README with improved structure and additional sections ([6fe9240](https://github.com/BayBreezy/nuxt-unlayer/commit/6fe9240))
+
+### 🏡 Chore
+
+- **release:** V0.0.22 ([8e7f627](https://github.com/BayBreezy/nuxt-unlayer/commit/8e7f627))
+- Add funding configuration ([165475f](https://github.com/BayBreezy/nuxt-unlayer/commit/165475f))
+- Update dependabot configuration to change monitored directories ([d5e6af1](https://github.com/BayBreezy/nuxt-unlayer/commit/d5e6af1))
+- Add CI workflow for linting and formatting ([cdc8f01](https://github.com/BayBreezy/nuxt-unlayer/commit/cdc8f01))
+- Add issue templates for bug reports and feature requests ([1053726](https://github.com/BayBreezy/nuxt-unlayer/commit/1053726))
+- Add husky hooks for commit linting and pre-commit linting ([586191a](https://github.com/BayBreezy/nuxt-unlayer/commit/586191a))
+- Update VSCode settings for improved formatting and metadata completions ([d5560a8](https://github.com/BayBreezy/nuxt-unlayer/commit/d5560a8))
+- Add clean script for removing generated files and dependencies ([48bede9](https://github.com/BayBreezy/nuxt-unlayer/commit/48bede9))
+- Add configuration files for oxfmt and oxlint ([4aa4f65](https://github.com/BayBreezy/nuxt-unlayer/commit/4aa4f65))
+- Add commitlint configuration for enforcing commit message standards ([e1de57c](https://github.com/BayBreezy/nuxt-unlayer/commit/e1de57c))
+- Update package.json with new dependencies and scripts ([acf70b1](https://github.com/BayBreezy/nuxt-unlayer/commit/acf70b1))
+- Update lock file ([621a0e0](https://github.com/BayBreezy/nuxt-unlayer/commit/621a0e0))
+- Add vue-tsc dep ([0ceedaa](https://github.com/BayBreezy/nuxt-unlayer/commit/0ceedaa))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](https://github.com/BayBreezy))
+
 ## v0.0.22
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.21...v0.0.22)
