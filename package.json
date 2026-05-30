@@ -40,11 +40,11 @@
     "clean": "node ./scripts/clean.mjs",
     "dev": "cd docs && nr dev",
     "dev:build": "cd docs && nr build",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && cd docs && nuxi prepare",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint src/",
-    "netlify": "nr dev:prepare && nr prepack && cd docs && bun i --frozen-lockfile && bun run build",
+    "netlify": "ni --frozen && nr dev:prepare && nr prepack && cd docs && bun i --frozen-lockfile && bun run build",
     "prepack": "nuxt-module-build build",
     "prepare": "husky",
     "release": "nr lint && nr fmt:check && nr prepack && changelogen --release && npm publish && git push --follow-tags"
