@@ -67,7 +67,8 @@
     "husky": "^9.1.7",
     "nuxt": "^4.4.6",
     "oxfmt": "^0.52.0",
-    "oxlint": "^1.67.0"
+    "oxlint": "^1.67.0",
+    "vue-tsc": "^3.3.3"
   },
   "lint-staged": {
     "*.{js,ts,vue,css,mjs,cjs}": "oxfmt --no-error-on-unmatched-pattern",
