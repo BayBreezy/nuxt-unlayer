@@ -1,4 +1,5 @@
-import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
+import { defineNuxtModule, createResolver, addComponent, extendViteConfig } from "@nuxt/kit";
+
 import { name, version } from "../package.json";
 
 // Module options TypeScript interface definition
@@ -22,6 +23,13 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = resolver.resolve("./runtime");
     nuxt.options.build.transpile.push(runtimeDir);
     nuxt.options.alias["#unlayer"] = runtimeDir;
+    extendViteConfig((config) => {
+      config.optimizeDeps = config.optimizeDeps || {};
+      config.optimizeDeps.include = config.optimizeDeps.include || [];
+      if (!config.optimizeDeps.include.includes("uuid")) {
+        config.optimizeDeps.include.push("uuid");
+      }
+    });
 
     // Add editor component
     addComponent({
