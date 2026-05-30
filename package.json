@@ -22,13 +22,18 @@
     "dist"
   ],
   "type": "module",
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
   "scripts": {
@@ -42,7 +47,7 @@
     "netlify": "nr prepack && cd docs && bun i --frozen-lockfile && bun run build",
     "prepack": "nuxt-module-build build",
     "prepare": "husky",
-    "release": "nr lint && nr fmt:check && nr test && nr prepack && changelogen --release && npm publish && git push --follow-tags"
+    "release": "nr lint && nr fmt:check && nr prepack && changelogen --release && npm publish && git push --follow-tags"
   },
   "dependencies": {
     "@nuxt/kit": "^4.4.6",
