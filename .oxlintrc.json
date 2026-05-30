@@ -1,0 +1,7 @@
+{
+  "rules": {},
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  }
+}
