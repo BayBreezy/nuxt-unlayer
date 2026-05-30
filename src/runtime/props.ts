@@ -1,5 +1,3 @@
-/// <reference types="unlayer-types/embed.d.ts" />
-
 import type { UnlayerEditor, UnlayerOptions } from "@unlayer/types";
 
 // Re-export the types most consumers will need so they only import from one place.
