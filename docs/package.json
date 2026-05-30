@@ -1,0 +1,43 @@
+{
+  "name": "nuxt-unlayer-playground",
+  "private": false,
+  "description": "This codebase holds the playground for the Nuxt Unlayer module",
+  "license": "MIT",
+  "author": {
+    "name": "Behon Baker",
+    "email": "behon.baker@yahoo.com",
+    "url": "https://behonbaker.com"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "clean": "rm -rf .nuxt dist .output node_modules yarn.lock package-lock.json && npm cache clean --force && npm i",
+    "dev": "nuxt dev --host",
+    "format": "npx prettier --write .",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "postinstall": "nuxt prepare",
+    "prepare": "husky",
+    "preview": "nuxt preview",
+    "ui:add": "npx --yes ui-thing@latest add"
+  },
+  "dependencies": {
+    "@baybreezy/docd": "latest"
+  },
+  "devDependencies": {
+    "@antfu/ni": "latest",
+    "@types/node": "latest",
+    "nuxt": "latest",
+    "typescript": "^6.0.3",
+    "vue": "latest"
+  },
+  "trustedDependencies": [
+    "@morev/vue-transitions",
+    "@parcel/watcher",
+    "better-sqlite3",
+    "esbuild",
+    "sharp",
+    "vue-demi"
+  ]
+}

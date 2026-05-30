@@ -1,0 +1,60 @@
+{
+  "cachedAt": 1780153195733,
+  "type": 1,
+  "props": [
+    {
+      "name": "icon",
+      "global": false,
+      "description": "The icon to display.",
+      "tags": [],
+      "required": false,
+      "type": "string | undefined",
+      "schema": {
+        "kind": "enum",
+        "type": "string | undefined",
+        "schema": { "0": "undefined", "1": "string" }
+      }
+    },
+    {
+      "name": "color",
+      "global": false,
+      "default": "\"primary\"",
+      "description": "The color variant of the icon.",
+      "tags": [],
+      "required": false,
+      "type": "any",
+      "schema": "any"
+    },
+    {
+      "name": "theme",
+      "global": false,
+      "default": "\"modern\"",
+      "description": "The theme variant of the icon.",
+      "tags": [],
+      "required": false,
+      "type": "any",
+      "schema": "any"
+    },
+    {
+      "name": "size",
+      "global": false,
+      "default": "\"lg\"",
+      "description": "The size variant of the icon.",
+      "tags": [],
+      "required": false,
+      "type": "any",
+      "schema": "any"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "type": "{}",
+      "description": "",
+      "tags": [],
+      "schema": { "kind": "object", "type": "{}", "schema": {} }
+    }
+  ],
+  "exposed": [],
+  "events": []
+}
