@@ -28,6 +28,7 @@
   "devDependencies": {
     "@antfu/ni": "latest",
     "@types/node": "latest",
+    "node-gyp": "^13.1.0",
     "nuxt": "latest",
     "typescript": "6.0.3",
     "vue": "latest"
