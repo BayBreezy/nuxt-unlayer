@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.1.1
+
+[compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.1.0...v0.1.1)
+
+### 📖 Documentation
+
+- Add colorMode configuration to nuxt.config.ts ([e6c993d](https://github.com/BayBreezy/nuxt-unlayer/commit/e6c993d))
+
+### 🏡 Chore
+
+- **release:** V0.1.0 ([1a92e40](https://github.com/BayBreezy/nuxt-unlayer/commit/1a92e40))
+- Update dev:prepare and netlify scripts for improved build process ([57bc29a](https://github.com/BayBreezy/nuxt-unlayer/commit/57bc29a))
+- Add overrides section in package.json ([8c53924](https://github.com/BayBreezy/nuxt-unlayer/commit/8c53924))
+- Update dependencies and devDependencies to latest versions ([7c2313d](https://github.com/BayBreezy/nuxt-unlayer/commit/7c2313d))
+- Run clean command ([3904a95](https://github.com/BayBreezy/nuxt-unlayer/commit/3904a95))
+- Set TS version ([1ab7f99](https://github.com/BayBreezy/nuxt-unlayer/commit/1ab7f99))
+
+### 🤖 CI
+
+- Update netlify script to include dev:prepare step ([3701800](https://github.com/BayBreezy/nuxt-unlayer/commit/3701800))
+
+### ❤️ Contributors
+
+- Behon Baker ([@BayBreezy](https://github.com/BayBreezy))
+
 ## v0.1.0
 
 [compare changes](https://github.com/BayBreezy/nuxt-unlayer/compare/v0.0.22...v0.1.0)
