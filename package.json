@@ -70,6 +70,9 @@
     "oxlint": "^1.87.0",
     "vue-tsc": "^3.3.12"
   },
+  "overrides": {
+    "typescript": "6.0.3"
+  },
   "lint-staged": {
     "*.{js,ts,vue,css,mjs,cjs}": "oxfmt --no-error-on-unmatched-pattern",
     "*.{js,jsx,ts,tsx,mjs,cjs}": "nr lint"
