@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   extends: ["@baybreezy/docd"],
   modules: ["../src/module"],
   compatibilityDate: "latest",
+  colorMode: { preference: "light", fallback: "light" },
   llms: {
     domain: process.env.NUXT_SITE_URL || "http://localhost:3000",
     title: process.env.NUXT_SITE_NAME || "Nuxt Unlayer",
